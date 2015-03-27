@@ -1,1 +1,0 @@
-KISSY.add("kg/accordion/1.0.0/lib/main",["node","base"],function(n,i,a,e){var o=(i("node").all,i("base"));e.exports=o.extend({initializer:function(){}},{ATTRS:{}})});
