@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Accordion的demo</title>
+    <script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+</head>
+<body>
+<h2>Accordion的demo</h2>
+<div id="J_according"></div>
+<style>
+    .slide-wrapper{
+        overflow: hidden;
+        width: 990px;
+        height: 490px;
+        background: #7f0019;
+    }
+    .slide-wrapper .slide-li{
+        list-style: none;
+        float: left;
+        width: 160px;
+        transition: 0.6s ease-in-out;
+        -moz-transition: 0.6s ease-in-out;
+        -o-transition: 0.6s ease-in-out;
+        -webkit-transition: 0.6s ease-in-out;
+    }
+    .slide-wrapper .select{
+        float: left;
+        width: 345px;
+    }
+    .slide-small{
+        display: block;
+    }
+    .slide-large{
+        display: none;
+    }
+    .slide-wrapper .select .slide-small{
+        display: none;
+    }
+    .slide-wrapper .select .slide-large{
+        display: block;
+    }
+</style>
+<script>
+    var S = KISSY;
+    if (S.Config.debug) {
+        var debugPath = "http://localhost:5555/";
+        S.config({
+            packages:[
+                {
+                    name:"kg/accordion/1.0.0",
+                    path:debugPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri: true
+                }
+            ]
+        });
+    }
+
+    S.use('kg/accordion/1.0.0/index', function (S, Accordion) {
+        new Accordion({
+            speed: 3000,
+            tpl: '<ul class="slide-wrapper">'
+            +'<li class="slide-li select"><a href="#" target="_blank"><img class="slide-large" src="images/large1.jpg" alt=""/><img class="slide-small" src="images/small1.jpg" alt=""/></a></li>'
+            +'<li class="slide-li"><a href="#" target="_blank"><img class="slide-large" src="images/large2.jpg" alt=""/><img class="slide-small" src="images/small2.jpg" alt=""/></a></li>'
+            +'<li class="slide-li"><a href="#" target="_blank"><img class="slide-large" src="images/large3.jpg" alt=""/><img class="slide-small" src="images/small3.jpg" alt=""/></a></li>'
+            +'<li class="slide-li"><a href="#" target="_blank"><img class="slide-large" src="images/large4.jpg" alt=""/><img class="slide-small" src="images/small4.jpg" alt=""/></a></li>'
+            +'<li class="slide-li"><a href="#" target="_blank"><img class="slide-large" src="images/large5.jpg" alt=""/><img class="slide-small" src="images/small5.jpg" alt=""/></a></li>'
+        });
+    })
+</script>
+</body>
+</html>
+
